@@ -33,3 +33,4 @@ const TaskList: React.FC<TaskListProps> = ({
         </ul>
     );
 };
+export default TaskList;
