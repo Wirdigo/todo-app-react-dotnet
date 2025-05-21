@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, InternalAxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5278/api'; // Замініть на ваш URL з Program.cs
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5102/api'; // Замініть на ваш URL з Program.cs
 
 const apiClient: AxiosInstance = axios.create({
     baseURL: API_BASE_URL,
