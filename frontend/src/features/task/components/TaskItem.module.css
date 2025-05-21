@@ -1,0 +1,108 @@
+.taskItem {
+    background-color: #D2D4DA;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #D03B00;
+    max-height: 2em;
+    border: 1px solid #EADFCB;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.taskItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.taskIconLeft {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+.taskText {
+    flex-grow: 1;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.taskActions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.actionIcon {
+    font-size: 1.4em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+.actionIcon:hover {
+    background-color: rgba(168, 47, 0, 0.1);
+}
+
+.trashIcon {
+    color: #FDF7E9;
+}
+.trashIcon:hover {
+    color: #D03B00;
+}
+
+.statusIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FDF7E9;
+    border: 2px solid #D03B00;
+    transition: background-color 0.3s, border-color 0.3s;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statusIcon:hover {
+    background-color: #D03B00;
+    opacity: 0.8;
+}
+
+/* Стилі для виконаних завдань */
+.taskCompleted {
+    background-color: rgba(210, 212, 218, 0.5);
+
+}
+
+.taskCompleted .taskText {
+    text-decoration: line-through;
+    color: #a98f83;
+}
+
+.taskCompleted .taskIconLeft {
+    color: #ad8c7e;
+    opacity: 0.7;
+}
+
+.statusDone {
+    background-color: #D03B00;
+    border-color: #D03B00;
+    color: white;
+}
+.statusDone::after {
+    content: '✔';
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.statusDone:hover {
+    background-color: #FDF7E9;
+    color: #D03B00;
+    border-color: #D03B00;
+}
