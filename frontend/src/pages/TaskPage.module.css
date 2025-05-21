@@ -1,0 +1,119 @@
+.logoTitleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer; 
+    padding: 10px; 
+    border-radius: 50%; 
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    user-select: none; 
+}
+
+.logoTitleContainer:hover:not(.logoDisabled) { 
+    background-color: rgba(208, 59, 0, 0.08); 
+    transform: scale(1.05);
+}
+.logoTitleContainer:active:not(.logoDisabled) { 
+    transform: scale(0.98);
+}
+
+
+.logoDisabled {
+    cursor: default;
+    opacity: 0.6;
+}
+
+.globeIcon {
+
+}
+.logoTitleContainer:active:not(.logoDisabled) .globeIcon {
+    transform: scale(0.95);
+}
+
+
+.todoTitle {
+    position: absolute;
+    margin-left: 10px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #D03B00;
+}
+
+.newTaskPrompt {
+    position: absolute;
+    margin-left: 500px;
+}
+
+.arrowIcon {
+    font-size: 2em;
+    margin-right: 8px;
+    color: #D03B00;
+}
+
+.newTaskText {
+    flex-grow: 1;
+    margin: 0;
+    font-weight: bold;
+}
+
+.addTaskFormContainer {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.addTaskInput {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #D03B00;
+    border-radius: 20px;
+    font-size: 0.7em;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset;
+}
+.addTaskInput:focus {
+    border-color: #a82f00;
+    box-shadow: 0 0 0 2px rgba(208, 59, 0, 0.2);
+}
+
+.addTaskButton {
+    padding: 12px 20px;
+    background-color: #D03B00;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.7em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.addTaskButton:hover:not(:disabled) {
+    background-color: #a82f00;
+}
+.addTaskButton:disabled {
+    background-color: #e0b0a0;
+    cursor: not-allowed;
+}
+
+.taskList {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.headerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
