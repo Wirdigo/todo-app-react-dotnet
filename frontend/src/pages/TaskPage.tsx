@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, {useState, useEffect, useRef, useMemo} from 'react';
 import {Task, UpdateTaskPayload, CreateTaskPayload} from "../features/task/types/Task";
 import TaskList from "../features/task/components/TaskList";
 import {getTasks, updateTask, deleteTask, createTask} from "../features/task/services/taskApi";
@@ -6,13 +6,10 @@ import PageHeader from "../components/PageHeader";
 import NoTasksMessage from "../features/task/components/NoTasksMessage";
 import AddTaskForm from "../features/task/components/AddTaskForm";
 const TaskPage: React.FC = () => {
-    const [tasks, setTasks] = useState<Task[]>([]).sort();
+    const [tasks, setTasks] = useState<Task[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
-    const [isAddingTask, setIsAddingTask] = useState<boolean>(false); 
-    const [newTaskText, setNewTaskText] = useState<string>(""); 
-    const newTaskInputRef = useRef<HTMLInputElement>(null); 
-
+    const [isAddingTask, setIsAddingTask] = useState<boolean>(false);
 
     useEffect(() => {
         const fetchTask = async () => {
@@ -29,12 +26,6 @@ const TaskPage: React.FC = () => {
         };
         fetchTask();
     }, []);
-
-    useEffect(() => {
-        if (isAddingTask && newTaskInputRef.current) {
-            newTaskInputRef.current.focus();
-        }
-    }, [isAddingTask]);
 
     const handleCreateTask = async (payload: CreateTaskPayload) => {
         if (payload.text.trim() === "") return;
@@ -80,6 +71,15 @@ const TaskPage: React.FC = () => {
         }
     };
 
+    const sortedTasks = useMemo(() => {
+        return [...tasks].sort((a, b) => {
+            if (a.isCompleted === b.isCompleted) {
+                return 0;
+            }
+            return a.isCompleted ? 1 : -1;
+        });
+    }, [tasks]);
+
     return (
         <div className={"todo-bg"}>
             <PageHeader isAddingTask={isAddingTask} onToggleAddTask={handleToggleAddTask}/>
@@ -94,7 +94,7 @@ const TaskPage: React.FC = () => {
                 <NoTasksMessage/>
             ):(
                 <TaskList
-                    tasks={tasks}
+                    tasks={sortedTasks}
                     onToggleComplete={handleToggleComplete}
                     onDeleteTask={handleDeleteTask}
                     isLoading={isLoading}

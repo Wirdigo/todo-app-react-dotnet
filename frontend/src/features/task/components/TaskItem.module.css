@@ -10,12 +10,12 @@
     border: 1px solid #EADFCB;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    
 }
 .taskItem:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
-
 .taskIconLeft {
     font-size: 1.5em;
     margin-right: 15px;
