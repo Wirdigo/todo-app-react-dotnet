@@ -19,7 +19,7 @@ namespace TodoApi
                 option.AddPolicy("AllowReactApp",
                     policy =>
                     {
-                        policy.WithOrigins("http://localhost:5173")
+                        policy.WithOrigins("http://localhost:3000")
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                     });
@@ -57,7 +57,7 @@ namespace TodoApi
 
             app.MapPut("/api/tasks/{id}", (int id, UpdateTaskDto taskDto, TaskService service) =>
             {
-                var existingTask = service.GetById(id);
+                var existingTask = service.GetById(id); 
                 if (existingTask is null)
                 {
                     return Results.NotFound($"Task with id {id} not found");

@@ -11,3 +11,76 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+.todo-bg{
+  background-color: #FDF7E9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  font-size: calc(10px + 2vmin);
+  color: #D03B00;
+}
+.logo-title-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todo-title {
+  position: absolute;
+  margin-left: 10px;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #D03B00;
+}
+.todo-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.new-task-prompt{
+  position: absolute;
+  margin-left: 500px;
+}
+
+.arrow-icon{
+  font-size: 1.5em;
+  margin-right: 15px;
+}
+
+
+.task-list{
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.no-task-container
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.no-task-text{
+  font-weight: bold;
+}
