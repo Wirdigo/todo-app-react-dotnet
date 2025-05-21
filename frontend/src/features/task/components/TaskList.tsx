@@ -1,6 +1,7 @@
 import React from 'react'
 import {Task, UpdateTaskPayload} from "../types/Task";
 import TaskItem from "./TaskItem";
+import { Flipper, Flipped } from 'react-flip-toolkit';
 
 interface TaskListProps {
     tasks: Task[];
@@ -25,12 +26,26 @@ const TaskList: React.FC<TaskListProps> = ({
     {
         return (<p style={{color: "red"}}>Error loading tasks: {error}</p>)
     }
+    const listKey = tasks.map(task => `${task.id}-${task.isCompleted}`).join(',');
     return (
-        <main className="task-list">
+        <Flipper
+            flipKey={listKey}
+            spring="gentle"
+            className="task-list"
+            element="main"
+        >
             {tasks.map((task: Task) => (
-                <TaskItem key={task.id} task={task} onToggleComplete={onToggleComplete} onDelete={onDeleteTask} />
+                <Flipped key={task.id} flipId={task.id}>
+                    <div style={{ width: '100%' }}>
+                        <TaskItem
+                            task={task}
+                            onToggleComplete={onToggleComplete}
+                            onDelete={onDeleteTask}
+                        />
+                    </div>
+                </Flipped>
             ))}
-        </main>
+        </Flipper>
     );
 };
 export default TaskList;
