@@ -46,7 +46,7 @@
 
 *   `frontend/`: Містить код React-додатку.
     *   `src/components/`: Загальні перевикористовувані UI компоненти.
-    *   `src/features/todos/`: Основна логіка та компоненти для функціоналу списку справ (TaskList, TodoItem, AddTodoForm).
+    *   `src/features/todos/`: Основна логіка та компоненти для функціоналу списку справ
     *   `src/pages/`: Компоненти-сторінки (наприклад, TodoPage).
     *   `src/services/`: Сервіси для взаємодії з API (apiClient, todoAPI).
     *   `src/types/`: Типи TypeScript.
@@ -54,7 +54,6 @@
     *   `Models/`: Моделі даних (наприклад, TaskItem).
     *   `Services/`: Сервіси для бізнес-логіки (наприклад, TaskService).
     *   `Program.cs`: Налаштування та визначення ендпоінтів Minimal API.
-    *   _(Якщо є папка з тестами, наприклад `TodoApi.Tests/`, вкажіть її)_
 
 ## Вимоги до оточення
 
